@@ -8,21 +8,19 @@ class App extends Component {
       tasks: ['run', 'sleep', 'eat'],
       value: ''
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({ value: event.target.value });
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
     // alert('A name was submitted: ' + this.state.value);
     const task = this.state.value;
     const updatedTasks = [...this.state.tasks, task];
     this.setState({ tasks: updatedTasks });
-  }
+  };
 
   render() {
     return (
